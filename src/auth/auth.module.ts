@@ -14,6 +14,8 @@ import { LocalStrategy } from './local.strategy';
     PassportModule,
     ConfigModule,
     JwtModule.registerAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
       useFactory: async (configService: ConfigService) => ({
         secret: configService.get('JWT_SECRET'),
         signOptions:{

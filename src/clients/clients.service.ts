@@ -34,6 +34,10 @@ async findOne(id: number) {
 
   }
 
+  findByEmail(email: string){
+    return this.clientRepository.findOne({where: {email}})
+  }
+
  async update(id: number, updateClientDto: UpdateClientDto) {
       await this.clientRepository.update(id,updateClientDto);
       const clientExist = await this.clientRepository.findOne({where: {id}})

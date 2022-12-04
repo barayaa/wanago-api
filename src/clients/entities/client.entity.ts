@@ -7,13 +7,16 @@ export class Client {
     id: number
 
     @Column()
-    nom:string
+    nom:string;
 
     @Column()
-    prenom: string
+    prenom: string;
 
     @Column({
         unique: true
     })
-    email: string
+    email: string;
+
+    @Column()
+    password: string;
 }

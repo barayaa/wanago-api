@@ -47,7 +47,6 @@ export class AuthService {
     }
 
     //getCookiWithToken
-
     async getCookiWithToken(email: string){
         const payload = {email};
         const token = this.jwtService.sign(payload);
